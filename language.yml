@@ -1,0 +1,86 @@
+#Language File for XWeather
+#Here you can translate all text messages in the plugin
+ChatPrefix: "&b[XWeather]"
+
+#Translates the names of the weather types used in the plugin
+#Warning! Do not use chat formatting or spaces for this part
+WeatherTypes:
+  HailStorm: "Hailstorm"
+  SandStorm: "Sandstorm"
+  SnowStorm: "Snowstorm"
+  SunShower: "Sunshower"
+  ThunderStorm: "Thunderstorm"
+  Windy: "Windy"
+  Tornado: "Tornado"
+  FireTornado: "FireTornado"
+  ShootingStars: "ShootingStars"
+  FlashFlood: "FlashFlood"
+  CatsAndDogs: "CatsAndDogs"
+  
+#Translate the command options so it is easy to use
+#Warning! Do not use chat formatting or spaces for this part
+ChatCommands:
+  set: "set"
+  stop: "stop"
+  reload: "reload"
+
+#Translates the messages sent to players
+#Variables:
+#<update>: ONLY WORKS FOR update. Inputs the link to the spigot page
+#<world>: ONLY WORKS FOR worldload, notworld startingweather and stopweather. 
+#Inputs the available world in.
+#<prefix>: inputs the chat prefix
+#<weather>: ONLY WORKS FOR startingweather and stopweather
+#inputs the name of the apropriate weather type defined in WeatherTypes
+#<set>: inputs the translated name for the set command
+#<stop>: inputs the translated name for the stop command
+#<reload>: inputs the translated name for the stop command
+#<tornado_location>: ONLY WORKS FOR loadingtornado and doneloadingtornado 
+#Inputs coordinates of tornado
+#<print_all_weathertypes>: ONLY WORKS FOR stop_usage, set_usage and usage
+#This will iterate through all of the weather types and print
+#<player> ONLY WORKS FOR hailstonedeath
+#out each name using the format of the line.
+#For An Example "&b- <print_all_weathertypes>" would print
+#"&b- Hailstorm"
+#"&b- Sandstorm"
+#"&b- Snowstorm"
+#etc
+ChatMessages:
+  checkupdate: "<prefix> &aChecking for updates"
+  update: "<prefix> &aAn update has been found for XWeather! Download at <update>"
+  noupdate: "<prefix> &aPlugin is up to date!"
+  failupdate: "<prefix> &cCould not check for updates!"
+  worldload: "<prefix> &aAllowing weather in world: <world>"
+  notworld: "<prefix> &c<world> is not a valid world!"
+  reload: "<prefix> &aReloading config file"
+  needint: "<prefix> &cYou need to use an integer when specifying the duration!"
+  noperm: "<prefix> &cYou do not have permission to use XWeather commands!"
+  loadingtornado: "<prefix> &aLoading tornado at <tornado_location>"
+  doneloadingtornado: "<prefix> &aDone loading tornado at <tornado_location>"
+  noonlinenotornado: "<prefix> &aNo one is online, so not starting tornado"
+  startingweather: "<prefix> &aStarting <weather> in <world>."
+  stopweather: "<prefix> &aStopping <weather> in <world>."
+  hailstonedeath: "<player> was killed by a hailstone"
+  #For startingweather and stopweather
+  #What should be said if action is for all worlds
+  allworlds: "all worlds" 
+  stoppingallweather: "<prefix> &aStopping all weather"
+  stop_usage: 
+    - "&b/xweather <stop> [optional weather type] [optional world]"
+    - "&aWeather Types:"
+    - "&b- <print_all_weathertypes>"
+  set_usage: 
+    - "&b/xweather <set> [weather type] [optional duration] [optional world]"
+    - "&aWeather Types:"
+    - "&b- <print_all_weathertypes>"
+  usage:
+    - "&a&lXWeather Commands"
+    - "&aReloads the Configuration File:"
+    - "&b/xweather <reload>"
+    - "&aStops Weather:"
+    - "&b/xweather <stop> [optional weather type] [optional world]"
+    - "&aStarts A Specific Weather:"
+    - "&b/xweather <set> [weather type] [optional duration] [optional world]"
+    - "&aWeather Types:"
+    - "&b- <print_all_weathertypes>"

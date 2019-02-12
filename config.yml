@@ -1,0 +1,455 @@
+#XWeather Configuration File
+#Made by Ccamm
+
+#Check for new updates for the plugin
+CheckForUpdates: true
+
+#Control in what worlds weather occurs
+WeatherControl:
+  #Time in seconds to check if a custom weather should naturally start
+  WeatherInterval: 300
+  #Universal options for wind
+  Wind:
+    #Should Wind Move Citizen NPCs
+    MoveNPC: true
+    #Should Wind Move Minecarts
+    MoveMinecart: true
+    #Should Wind Move Armourstands
+    MoveArmorStands: true
+    #Distance from a wall to stop wind effects on an entity.
+    WallDistance: 3
+    #Should the wind be able to change direction
+    #Setting to true will increase the number of computations needed 
+    #and may cause little lag.
+    CanChangeDirection: false
+    #Period in seconds for updating the direction of the wind
+    UpdateWindPeriod: 5
+    #Period in seconds for setting a new wind direction
+    WindChangePeriod: 480
+  #Should XWeather Load Chunks that haven't been loaded.
+  #WARNING! Setting to true may cause significant lag 
+  #But will allow Tornadoes to travel in unloaded regions.
+  LoadChunks: false
+  #Should no weather occur in empty worlds.
+  NoWeatherInEmpty: true
+  #Should the weather be the same across all worlds
+  UniversalWeather: false
+  #Set to true for blacklist, false for whitelist.
+  Blacklist: true
+  #What worlds should should be blacklisted/whitelisted
+  Worlds:
+    - world_nether
+    - world_the_end
+
+#Configuration options for Sandstorms
+SandStorm:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should sandstorms run for in seconds.
+  Duration: 300 
+  #Chance of sandstorm starting naturally.
+  SpawnChance: 0.05 
+  #Should it rain when it has finished
+  RainAfter: false
+  #How many particles per player to spawn during storm.
+  ParticleCount: 75 
+  #How fast do you want the particles to move
+  ParticleSpeed: 0.9
+  #How far away do players see the sandstorm effect
+  RadiusAroundPlayer: 30 
+  #Options for wind effects:
+  Wind:
+    #Should wind move anything at all
+    Enabled: true
+    #Should the wind move players
+    MovePlayer: true
+    #Should wind move mobs
+    MoveMobs: true
+    #Speed that entities are moved
+    #Slowest speed that moves entities is 22.
+    #Players need a higher speed in order to move.
+    MoveSpeed: 100
+    #Modifier for projectiles. 
+    #Gives the effect of projectiles being blown away by wind.
+    #Higher the number the more significant it blows away.
+    ProjectileModifier: 3
+    #Modifier for players wearing Elytras.
+    ElytraModifier: 1.2
+
+#Configuration options for Hailstorms
+HailStorm:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should hailstorms run for in seconds.
+  Duration: 300 
+  #Chance of hailstorm starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05 
+  #Should it rain when it has finished
+  RainAfter: false
+  #Radius around players where hail will fall
+  RadiusAroundPlayer: 30 
+  #How many hail stones should drop per tick.
+  ParticleCount: 25
+  #Should hailstones damage entities
+  #If you want hailstones to damage players you need to set pvp to true in your server.properties and multiverse config
+  DamageEntities: true
+  #How much damage should hailstones do (1 = half a heart)
+  Damage: 2
+  #Should hailstones make a sound when they hit the ground
+  Sound: true
+  #Options for wind effects:
+  Wind:
+    #Should wind move anything at all
+    Enabled: false
+    #Should the wind move players
+    MovePlayer: false
+    #Should wind move mobs
+    MoveMobs: false
+    #Speed that entities are moved
+    #Slowest speed that moves entities is 22.
+    MoveSpeed: 100
+    #Modifier for projectiles. 
+    #Gives the effect of projectiles being blown away by wind.
+    #Higher the number the more significant it blows away.
+    ProjectileModifier: 3
+    #Modifier for players wearing Elytras.
+    ElytraModifier: 1.2
+
+#Configuration options for Sunshowers
+SunShower:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should sunshowers run for in seconds.
+  Duration: 300
+  #Chance of sunshower starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05
+  #Should it rain when it has finished
+  RainAfter: true
+  #How many particles per player to spawn during sunshower
+  ParticleCount: 30
+  #Radius around players where player will see sunshower effect
+  RadiusAroundPlayer: 30
+
+#Configuration options for Windy weather conditions
+Windy:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should windy run for in seconds.
+  Duration: 300 
+  #Chance of it becoming windy naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05 
+  #Should it rain when it has finished
+  RainAfter: false
+  #How many particles per player to spawn when windy.
+  ParticleCount: 10 
+  #How fast do you want the particles to move
+  ParticleSpeed: 0.8
+  #How far away do players see the wind effect
+  RadiusAroundPlayer: 30
+  #Should windy weather conditions start a sandstorm in desert biomes
+  StartSandstorm: false
+  #Options for wind effects:
+  Wind:
+    #Should wind move anything at all
+    Enabled: true
+    #Should the wind move players
+    MovePlayer: true
+    #Should wind move mobs
+    MoveMobs: true
+    #Speed that entities are moved
+    #Slowest speed that moves entities is 22.
+    MoveSpeed: 100
+    #Modifier for projectiles. 
+    #Gives the effect of projectiles being blown away by wind.
+    #Higher the number the more significant it blows away.
+    ProjectileModifier: 3
+    #Modifier for players wearing Elytras.
+    ElytraModifier: 1.2
+
+#Configuration options for Thunderstorms
+ThunderStorm:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should Thunderstorms run for in seconds.
+  Duration: 300
+  #Chance of thunderstorm starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05
+  #Should it rain when it has finished
+  RainAfter: true
+  #How close to players should lightning strike.
+  RadiusAroundPlayer: 10
+  #Should lightning strikes be closer to players wearing/holding meta.
+  MetalAttractLightning: true
+  #How close to a player wearing metal armour or is using a metal object
+  #should lightning strike.
+  MetalRadiusAroundPlayer: 1
+  #Chance that a lightning will strike close to a player every 3 seconds.
+  LightningChance: 0.30
+
+#Configuration options for Snowstorms
+SnowStorm:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should Snowstorms run for in seconds.
+  Duration: 300
+  #Chance of a snowstorm starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05
+  #Should it rain when it has finished
+  RainAfter: true
+  #How many particles per player to spawn when a snowstorm is occuring.
+  ParticleCount: 75
+  #How fast do you want the particles to move
+  ParticleSpeed: 0.9
+  #How far away do players see the snowstorm
+  RadiusAroundPlayer: 30
+  #Options about snow building up on the map
+  SnowBuildUp:
+    #Should snow build up in the world.
+    Snow: true
+    #How many ticks between each new layer of snow
+    Ticks: 1
+  #Options for wind effects:
+  Wind:
+    #Should wind move anything at all
+    Enabled: true
+    #Should the wind move players
+    MovePlayer: true
+    #Should wind move mobs
+    MoveMobs: true
+    #Speed that entities are moved
+    #Slowest speed that moves entities is 22.
+    MoveSpeed: 100
+    #Modifier for projectiles. 
+    #Gives the effect of projectiles being blown away by wind.
+    #Higher the number the more significant it blows away.
+    ProjectileModifier: 3
+    #Modifier for players wearing Elytras.
+    ElytraModifier: 1.2
+
+#Configuration options for Shooting Stars
+ShootingStars:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should shooting stars run for in seconds.
+  Duration: 300
+  #Chance of shooting stars starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05
+  #Should it rain when it has finished
+  RainAfter: false
+  #How many particles in each star.
+  ParticleCount: 72
+  #How far away from a player should a star occur
+  RadiusAroundPlayer: 50
+  #Chance of a star shooting above for each player
+  ChanceOfStar: 0.2
+  #The length of each star (stars are square in shape)
+  StarSize: 1
+  #Maximum speed of a star
+  MaxStarSpeed: 10
+  #Minimum speed of a star
+  MinStarSpeed: 5
+  #Height above players where a shooting star will occur.
+  #If you want this to occur at the world limit set it to 256
+  StarHeight: 256
+
+#Configuration options for Flash Floods
+FlashFlood:
+  #Should the weather type naturally start
+  #Warning! 
+  #Flash floods can cause permanent change to worlds
+  Enabled: false
+  #List of worlds where this weather type is disabled in.
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should flash floods run for in seconds.
+  Duration: 300
+  #Chance of a flash flood starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.03
+  #Should it rain when it has finished
+  RainAfter: true
+  #How far away should an area be flooded
+  RadiusAroundPlayer: 40
+  #How many ticks between each flooding event
+  TicksBetweenFlooding: 40
+  
+#Configuration options for when it is raining Cats and Dogs
+#Warning this is a joke weather type and shouldn't be set to naturally occur.
+#There will be a tonne of animals around players if set so be careful
+CatsAndDogs:
+  #Should the weather type naturally start
+  Enabled: false
+   #List of worlds where this weather type is disabled in.
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should it rain cats and dogs for in seconds.
+  Duration: 300
+  #Chance of it raining cats and dogs naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.03
+  #Should it rain when it has finished
+  RainAfter: true
+  #The area around a player where it will rain cats and dogs
+  RadiusAroundPlayer: 30
+  #The number of cats and dogs should be spawned per player
+  AnimalCount: 5
+  #The chance that the raining animal is a cat
+  #IMPORTANT for the chance of a dog it would be 1 - <chance it rains a cat>
+  CatChance: 0.5
+
+#Configuration options for Tornadoes
+Tornado:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should tornadoes run for in seconds.
+  Duration: 300 
+  #Chance of a tornado starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05 
+  #Radius around a random player where the tornado naturally start from.
+  SpawnRadius: 30 
+  #Speed of loading the tornado path. 
+  #WARNING! Increasing this number may cause immense lag, but shorter load times!
+  LoadSpeed: 2 
+  #Chance that the tornado will randomly change direction.
+  ChangeDirectionChance: 0.01 
+  #Height of a tornado. Reduce this if you want less particles.
+  Height: 7 
+  #The radius of the Tornado at the bottom.
+  BottomRadius: 1 
+  #The radius of the Tornado at the top. Best to keep this number greater than the bottom radius.
+  TopRadius: 3.5
+  #Options for Fire Tornadoes.
+  Fire:
+    #Can a Tornado become a fire tornado if it goes over lava or through fire.
+    #WARNING! Fire Tornadoes can cause massive fires and cause immense damage!
+    CanCatchOnFire: false
+    #The chance that the bottom block of the tornado will set on fire.
+    ChanceBlockOnFire: 0.4
+    #The percent of Tornadoes that should be a flame particle instead.
+    FlameParticlePercent: 0.05
+    #Maximum distance from the middle of the Tornado where entities will catch on fire if Fire Tornado
+    EntityOnFire: 2
+  #Options for sucking in entities into a Tornado:
+  SuckIn:
+    #Should Tornadoes suck anything in
+    Enabled: true
+    #The radius around a Tornado where entities will be sucked into it.
+    Radius: 7
+    #Should the Tornadoes move players
+    MovePlayer: true
+    #Should Tornadoes move mobs
+    MoveMobs: true
+    #Options for destroying and sucking in blocks
+    Blocks:
+      #Should Tornadoes be able to destroy blocks
+      DestroyBlocks: true
+      #Radius around Tornadoes where blocks can be destroyed.
+      #Keep this number fairly low to prevent lag
+      BlockDestroyRadius: 4
+      #Maximum number of blocks that can be destroyed every 2 ticks
+      #Keep this number fairly low in order to prevent the destruction of blocks lagging behind the Tornado
+      MaxDestroyedBlocks: 4
+      #List of types of blocks that can be destroyed.
+      #There are two lists here because how Minecraft ids were changed in 1.13
+      #To get the material names use https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+      #For legacy versions of minecraft use the materials that start with "LEGACY_"
+      #But remove the "LEGACY_" bit from the name of it.
+      #For an example on a 1.12 server to get the material of acacia leaves you would do LEAVES_2
+      #To help match Material names to minecraft blocks for legacy versions use
+      #https://www.digminecraft.com/lists/item_id_list_pc_1_12.php or google search for it.
+      #You should avoid listing blocks such as sand and grass because this will cause trenches everywhere.
+      BlockDestroyLists:
+        13+:
+          - ACACIA_LEAVES
+          - BIRCH_LEAVES
+          - DARK_OAK_LEAVES
+          - JUNGLE_LEAVES
+          - OAK_LEAVES
+          - SPRUCE_LEAVES
+          - ACACIA_LOG
+          - BIRCH_LOG
+          - DARK_OAK_LOG
+          - JUNGLE_LOG
+          - OAK_LOG
+          - SPRUCE_LOG
+          - ACACIA_WOOD
+          - BIRCH_WOOD
+          - DARK_OAK_WOOD
+          - JUNGLE_WOOD
+          - OAK_WOOD
+          - SPRUCE_WOOD
+          - ACACIA_PLANKS
+          - BIRCH_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - OAK_PLANKS
+          - SPRUCE_PLANKS
+          - STRIPPED_ACACIA_LOG
+          - STRIPPED_BIRCH_LOG
+          - STRIPPED_DARK_OAK_LOG
+          - STRIPPED_JUNGLE_LOG
+          - STRIPPED_OAK_LOG
+          - STRIPPED_SPRUCE_LOG
+          - STRIPPED_ACACIA_WOOD
+          - STRIPPED_BIRCH_WOOD
+          - STRIPPED_DARK_OAK_WOOD
+          - STRIPPED_JUNGLE_WOOD
+        Legacy:
+          - LEAVES
+          - LEAVES_2
+          - LOG
+          - LOG_2
+          - WOOD
+  #Settings for how players see Tornadoes
+  VisualEffects:
+    #Should the particles be spawned to the world
+    #WARNING! Setting to false may cause some lag, but will allow players to see tornadoes further away.
+    SpawnParticlesInWorld: true
+    #If SpawnParticlesInWorld is false then how far away should players be able to see a tornado.
+    DistanceFromPlayers: 50
+  #Control how many particles in a tornado
+  #Warning! This is complicated and should only be modified if you know what you are doing!
+  #Think of a cone and how it is made of circles with varying radius.
+  #If you do not want to bother trying to find a lower density tornado, I have provided a
+  #comment next to each option for a lower density tornado.
+  ParticleControl:
+    #Difference in degrees between each particle. Increase to decrease particles.
+    DegreesBetweenParticles: 15 #Lower Density: 30.0
+    #Random change in degree for particle (this is to give tornadoes a more dynamic look)
+    RandomDegreesBetweenParticles: 7.5 #Lower Density: 15.0
+    #Distance to the next circle that makes the cone.
+    DistanceToNextCircle: 0.4 #Lower Density: 0.8
+    #The random change in height for each particle.
+    RandomDistanceToNextCircle: 0.1 #Lower Density: 0.4
