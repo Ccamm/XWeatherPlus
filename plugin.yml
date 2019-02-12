@@ -1,14 +1,14 @@
-name: XWeather
-main: me.Ccamm.XWeather.Main
+name: XWeatherPlus
+main: me.Ccamm.XWeatherPlus.Main
 author: Ccamm
 version: 2.0.0
 api-version: 1.13
-softdepend: [Multiverse-Core, WorldGuard]
+softdepend: [Multiverse-Core, WorldGuard, XWeather]
 commands:
   xweather:
     description: For setting the weather
     usage: /xweather
 permissions:
-  xweather.admin:
+  xweatherplus.admin:
     description: Allows the player to use xweather commands
     default: False

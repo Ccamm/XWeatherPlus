@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather;
+package me.Ccamm.XWeatherPlus.Weather;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -8,7 +8,7 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Ccamm.XWeather.Main;
+import me.Ccamm.XWeatherPlus.Main;
 
 public class Wind 
 {

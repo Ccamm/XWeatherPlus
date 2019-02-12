@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather;
+package me.Ccamm.XWeatherPlus;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.Point.PointWeather;
-import me.Ccamm.XWeather.Weather.World.WorldWeather;
-import me.Ccamm.XWeather.Weather.World.WorldWeatherType;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.Point.PointWeather;
+import me.Ccamm.XWeatherPlus.Weather.World.WorldWeather;
+import me.Ccamm.XWeatherPlus.Weather.World.WorldWeatherType;
 
 public class Commands implements CommandExecutor
 {
@@ -22,7 +22,7 @@ public class Commands implements CommandExecutor
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) 
 	{
 		language = Main.getLanguageLoader().getLanguage();
-		if(!sender.hasPermission("xweather.admin") && !sender.isOp()) {
+		if(!sender.hasPermission("xweatherplus.admin") && !sender.isOp()) {
 			String msg = Main.getLanguageLoader().lineInterpreter(language.getString("ChatMessages.noperm"), "");
 			sendMessage(msg, sender);
 			return true;

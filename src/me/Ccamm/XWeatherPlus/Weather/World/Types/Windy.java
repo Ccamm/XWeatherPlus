@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.World.Types;
+package me.Ccamm.XWeatherPlus.Weather.World.Types;
 
 import java.util.Random;
 
@@ -8,9 +8,9 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.Wind;
-import me.Ccamm.XWeather.Weather.World.WorldWeather;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.Wind;
+import me.Ccamm.XWeatherPlus.Weather.World.WorldWeather;
 
 public class Windy extends WorldWeather
 {

@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.World.Types;
+package me.Ccamm.XWeatherPlus.Weather.World.Types;
 
 import java.util.Random;
 
@@ -10,9 +10,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.metadata.FixedMetadataValue;
 
-import me.Ccamm.XWeather.Main;
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.World.WorldWeather;
+import me.Ccamm.XWeatherPlus.Main;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.World.WorldWeather;
 
 public class HailStorm extends WorldWeather
 {

@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.World.Types;
+package me.Ccamm.XWeatherPlus.Weather.World.Types;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,8 +15,8 @@ import org.bukkit.entity.Ocelot;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Wolf;
 
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.World.WorldWeather;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.World.WorldWeather;
 
 public class CatsAndDogs extends WorldWeather
 {

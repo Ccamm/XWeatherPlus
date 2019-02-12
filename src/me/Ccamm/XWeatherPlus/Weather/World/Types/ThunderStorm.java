@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.World.Types;
+package me.Ccamm.XWeatherPlus.Weather.World.Types;
 
 import java.util.Random;
 
@@ -10,8 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.World.WorldWeather;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.World.WorldWeather;
 
 public class ThunderStorm extends WorldWeather
 {

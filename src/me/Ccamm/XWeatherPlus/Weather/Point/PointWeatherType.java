@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.Point;
+package me.Ccamm.XWeatherPlus.Weather.Point;
 
 public interface PointWeatherType 
 {

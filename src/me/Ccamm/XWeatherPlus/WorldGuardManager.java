@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather;
+package me.Ccamm.XWeatherPlus;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

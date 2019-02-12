@@ -1,6 +1,6 @@
 #Language File for XWeather
 #Here you can translate all text messages in the plugin
-ChatPrefix: "&b[XWeather]"
+ChatPrefix: "&b&l[XWeatherPlus]"
 
 #Translates the names of the weather types used in the plugin
 #Warning! Do not use chat formatting or spaces for this part

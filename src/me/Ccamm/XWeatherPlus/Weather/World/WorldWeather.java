@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.World;
+package me.Ccamm.XWeatherPlus.Weather.World;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,20 +24,20 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-import me.Ccamm.XWeather.Commands;
-import me.Ccamm.XWeather.LanguageLoader;
-import me.Ccamm.XWeather.Main;
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.Wind;
-import me.Ccamm.XWeather.Weather.World.Types.CatsAndDogs;
-import me.Ccamm.XWeather.Weather.World.Types.FlashFlood;
-import me.Ccamm.XWeather.Weather.World.Types.HailStorm;
-import me.Ccamm.XWeather.Weather.World.Types.SandStorm;
-import me.Ccamm.XWeather.Weather.World.Types.ShootingStars;
-import me.Ccamm.XWeather.Weather.World.Types.SnowStorm;
-import me.Ccamm.XWeather.Weather.World.Types.SunShower;
-import me.Ccamm.XWeather.Weather.World.Types.ThunderStorm;
-import me.Ccamm.XWeather.Weather.World.Types.Windy;
+import me.Ccamm.XWeatherPlus.Commands;
+import me.Ccamm.XWeatherPlus.LanguageLoader;
+import me.Ccamm.XWeatherPlus.Main;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.Wind;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.CatsAndDogs;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.FlashFlood;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.HailStorm;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.SandStorm;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.ShootingStars;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.SnowStorm;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.SunShower;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.ThunderStorm;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.Windy;
 
 public class WorldWeather implements WorldWeatherType
 {

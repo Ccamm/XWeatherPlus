@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather;
+package me.Ccamm.XWeatherPlus;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

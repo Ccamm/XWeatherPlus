@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.Point;
+package me.Ccamm.XWeatherPlus.Weather.Point;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -10,8 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Ccamm.XWeather.Main;
-import me.Ccamm.XWeather.Weather.Point.Types.Tornado;
+import me.Ccamm.XWeatherPlus.Main;
+import me.Ccamm.XWeatherPlus.Weather.Point.Types.Tornado;
 
 public class PointWeather implements PointWeatherType
 {

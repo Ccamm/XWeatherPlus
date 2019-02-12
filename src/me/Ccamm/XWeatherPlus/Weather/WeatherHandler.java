@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather;
+package me.Ccamm.XWeatherPlus.Weather;
 
 import java.util.HashSet;
 import java.util.List;
@@ -14,11 +14,11 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Ccamm.XWeather.LanguageLoader;
-import me.Ccamm.XWeather.Main;
-import me.Ccamm.XWeather.WorldGuardManager;
-import me.Ccamm.XWeather.Weather.Point.PointWeather;
-import me.Ccamm.XWeather.Weather.World.WorldWeather;
+import me.Ccamm.XWeatherPlus.LanguageLoader;
+import me.Ccamm.XWeatherPlus.Main;
+import me.Ccamm.XWeatherPlus.WorldGuardManager;
+import me.Ccamm.XWeatherPlus.Weather.Point.PointWeather;
+import me.Ccamm.XWeatherPlus.Weather.World.WorldWeather;
 
 public class WeatherHandler 
 {

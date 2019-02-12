@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather;
+package me.Ccamm.XWeatherPlus;
 
 import java.io.File;
 import java.io.IOException;

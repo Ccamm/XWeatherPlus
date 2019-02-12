@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.World;
+package me.Ccamm.XWeatherPlus.Weather.World;
 
 import java.util.HashSet;
 

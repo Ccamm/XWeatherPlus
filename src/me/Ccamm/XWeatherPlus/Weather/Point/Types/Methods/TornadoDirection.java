@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather.Weather.Point.Types.Methods;
+package me.Ccamm.XWeatherPlus.Weather.Point.Types.Methods;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,9 +11,9 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Ccamm.XWeather.Main;
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.Point.Types.Tornado;
+import me.Ccamm.XWeatherPlus.Main;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.Point.Types.Tornado;
 
 public class TornadoDirection 
 {

@@ -1,4 +1,4 @@
-package me.Ccamm.XWeather;
+package me.Ccamm.XWeatherPlus;
 
 import java.util.HashSet;
 import java.util.UUID;
@@ -16,8 +16,8 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import me.Ccamm.XWeather.Weather.WeatherHandler;
-import me.Ccamm.XWeather.Weather.World.Types.HailStorm;
+import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.HailStorm;
 
 public class Events implements Listener
 {
