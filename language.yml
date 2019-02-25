@@ -16,6 +16,11 @@ WeatherTypes:
   ShootingStars: "ShootingStars"
   FlashFlood: "FlashFlood"
   CatsAndDogs: "CatsAndDogs"
+  AcidRain: "AcidRain"
+  HeavyRain: "HeavyRain"
+  MeteorShower: "MeteorShower"
+  Meteor: "Meteor"
+  EarthQuake: "EarthQuake"
   
 #Translate the command options so it is easy to use
 #Warning! Do not use chat formatting or spaces for this part
@@ -37,9 +42,10 @@ ChatCommands:
 #<reload>: inputs the translated name for the stop command
 #<tornado_location>: ONLY WORKS FOR loadingtornado and doneloadingtornado 
 #Inputs coordinates of tornado
+#<meteor_location>: ONLY WORKS FOR singlemeteor
+#<player> ONLY WORKS FOR hailstonedeath
 #<print_all_weathertypes>: ONLY WORKS FOR stop_usage, set_usage and usage
 #This will iterate through all of the weather types and print
-#<player> ONLY WORKS FOR hailstonedeath
 #out each name using the format of the line.
 #For An Example "&b- <print_all_weathertypes>" would print
 #"&b- Hailstorm"
@@ -51,13 +57,15 @@ ChatMessages:
   update: "<prefix> &aAn update has been found for XWeather! Download at <update>"
   noupdate: "<prefix> &aPlugin is up to date!"
   failupdate: "<prefix> &cCould not check for updates!"
-  worldload: "<prefix> &aAllowing weather in world: <world>"
+  weatherload: "<prefix> &aEnabled worlds for <weather>"
+  worldload: "<prefix> \t&a- <world>"
   notworld: "<prefix> &c<world> is not a valid world!"
   reload: "<prefix> &aReloading config file"
   needint: "<prefix> &cYou need to use an integer when specifying the duration!"
   noperm: "<prefix> &cYou do not have permission to use XWeather commands!"
   loadingtornado: "<prefix> &aLoading tornado at <tornado_location>"
   doneloadingtornado: "<prefix> &aDone loading tornado at <tornado_location>"
+  singlemeteor: "<prefix> &aSending a meteor to <meteor_location>"
   noonlinenotornado: "<prefix> &aNo one is online, so not starting tornado"
   startingweather: "<prefix> &aStarting <weather> in <world>."
   stopweather: "<prefix> &aStopping <weather> in <world>."
@@ -75,7 +83,7 @@ ChatMessages:
     - "&aWeather Types:"
     - "&b- <print_all_weathertypes>"
   usage:
-    - "&a&lXWeather Commands"
+    - "&a&lXWeatherPlus Commands"
     - "&aReloads the Configuration File:"
     - "&b/xweather <reload>"
     - "&aStops Weather:"

@@ -14,7 +14,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Ccamm.XWeatherPlus.LanguageLoader;
 import me.Ccamm.XWeatherPlus.Main;
 import me.Ccamm.XWeatherPlus.WorldGuardManager;
 import me.Ccamm.XWeatherPlus.Weather.Point.PointWeather;
@@ -90,7 +89,6 @@ public class WeatherHandler
 		List<String> stringwhitelist = config.getStringList("WeatherControl.Worlds");
 		for(String s : stringwhitelist) {
 			if(Bukkit.getWorld(s) == null) {
-				LanguageLoader.sendMessage("ChatMessages.notworld", s, null, true);
 				continue;
 			} else {
 				worlds.add(Bukkit.getWorld(s));
@@ -104,7 +102,6 @@ public class WeatherHandler
 		List<String> stringblacklist = config.getStringList("WeatherControl.Worlds");
 		for(String s : stringblacklist) {
 			if(Bukkit.getWorld(s) == null) {
-				LanguageLoader.sendMessage("ChatMessages.notworld", s, null, true);
 				continue;
 			}
 			blacklist.add(Bukkit.getWorld(s));
@@ -112,7 +109,6 @@ public class WeatherHandler
 		
 		for(World w : Bukkit.getWorlds()) {
 			if(w.getEnvironment().equals(Environment.NORMAL) && !blacklist.contains(w)) {
-				LanguageLoader.sendMessage("ChatMessages.worldload", w.getName(), null, true);
 				worlds.add(w);
 			}
 		}
@@ -293,6 +289,16 @@ public class WeatherHandler
 		}
 		int result = loc.getWorld().getHighestBlockYAt(loc);
 		return result;
+	}
+	
+	public static boolean checkValidWaterLocation(Location location)
+	{
+		Location loc = location.clone().subtract(0,1,0);
+
+		if(loc.getBlock().getType().isOccluding()) {
+			return true;
+		}
+		return false;
 	}
 	
 	public static boolean moveNPC() {return movenpc;}

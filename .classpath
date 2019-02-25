@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/home/alex/Desktop/Minecraft/WorldGuard/Worldedit/worldedit-bukkit-7.0.0-beta-04.jar"/>
 	<classpathentry kind="lib" path="/home/alex/Desktop/Minecraft/WorldGuard/worldguard-legacy-7.0.0-beta-02.jar"/>
-	<classpathentry kind="lib" path="/home/alex/Desktop/Minecraft/BuildTools/1.13.1/Spigot/Spigot-API/target/spigot-api-1.13.1-R0.1-SNAPSHOT-shaded.jar"/>
+	<classpathentry kind="lib" path="/home/alex/Desktop/Minecraft/BuildTools/1.13.2/Spigot/Spigot-API/target/spigot-api-1.13.2-R0.1-SNAPSHOT-shaded.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

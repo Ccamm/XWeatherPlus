@@ -26,6 +26,7 @@ public class LanguageLoader
 		variables.put("<prefix>", "ChatPrefix");
 		variables.put("<weather>", "WeatherTypes");
 		variables.put("<tornado_location>", "Stop Having Sneaky Looks At My Code");
+		variables.put("<meteor_location>", "Stop Having Sneaky Looks At My Code");
 		variables.put("<set>", "ChatCommands.set");
 		variables.put("<stop>", "ChatCommands.stop");
 		variables.put("<reload>", "ChatCommands.reload");

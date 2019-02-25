@@ -3,6 +3,8 @@ package me.Ccamm.XWeatherPlus;
 import java.util.HashSet;
 import java.util.UUID;
 
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Damageable;
 import org.bukkit.entity.Entity;
@@ -11,12 +13,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.FluidLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
+import me.Ccamm.XWeatherPlus.Weather.World.Puddle;
 import me.Ccamm.XWeatherPlus.Weather.World.Types.HailStorm;
 
 public class Events implements Listener
@@ -26,14 +31,27 @@ public class Events implements Listener
 	public void onJoin(PlayerJoinEvent e)
 	{
 		Player p = e.getPlayer();
-		if(p.hasPermission("xweather.admin") || p.isOp()) {
-			Updater update = Main.getUpdater();
-			update.checkForUpdates(p);
+		if(p.hasPermission("xweatherplus.admin") || p.isOp()) {
+			//Remove when updater setup
+			//Updater update = Main.getUpdater();
+			//update.checkForUpdates(p);
+		}
+	}
+	
+	@EventHandler(priority = EventPriority.LOWEST)
+	public void onWaterChange(FluidLevelChangeEvent e)
+	{
+		Location loc = e.getBlock().getLocation();
+		if(e.getBlock().getType().equals(Material.WATER)
+				&& e.getNewData().getAsString().equals("minecraft:air")) {
+			if(Puddle.shouldPuddleStay(loc)) {
+				e.setCancelled(true);
+			}
 		}
 	}
 	
 	@EventHandler
-	public void onHailstoneHit(ProjectileHitEvent e)
+	public void onProjectileHit(ProjectileHitEvent e)
 	{
 		if(!HailStorm.canDamage()) {return;}
 		

@@ -14,6 +14,10 @@
 #Check for new updates for the plugin
 CheckForUpdates: true
 
+#Help debug issues with XWeatherPlus. 
+#At this point setting to true will only print the worlds for each weather type
+Debug: false
+
 #Control in what worlds weather occurs
 WeatherControl:
   #Time in seconds to check if a custom weather should naturally start
@@ -310,6 +314,148 @@ FlashFlood:
   RadiusAroundPlayer: 40
   #How many ticks between each flooding event
   TicksBetweenFlooding: 40
+
+#Configuration options for AcidRain 
+AcidRain:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in.
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should acid rain run for in seconds.
+  Duration: 300
+  #Chance of acid rain starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05
+  #Should it rain when it has finished
+  RainAfter: true
+  #The area around a player where it will rain cats and dogs
+  RadiusAroundPlayer: 30
+  #The number of acid drops should be spawned per player
+  ParticleCount: 2
+  #Radius around an acid drop that hits the ground where entities will be poisoned
+  PoisonRadius: 0.5
+  #The potion effects given to poisoned entities
+  #Use the names from https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html
+  #For the types of potion effects.
+  PoisonEffects:
+    #The Name Of The Potion Effect
+    POISON:
+      #How long should the potion effect last for in seconds
+      Duration: 6
+      #The strength of the potion effect
+      Amplitude: 2
+    CONFUSION:
+      Duration: 6
+      Amplitude: 1
+      
+#Configuration options for HeavyRain 
+HeavyRain:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in.
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should heavy rain run for in seconds.
+  Duration: 300
+  #Chance of heavy rain starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.05
+  #Should it rain when it has finished
+  RainAfter: true
+  #The area around a player where puddles will form
+  RadiusAroundPlayer: 30
+  #The number of extra water drops should be spawned per player
+  ParticleCount: 2
+  #Chance of a puddle forming near a player every second
+  PuddleChance: 0.2
+  
+#Configuration options for MeteorShower
+#WARNING! Meteors Cause Significant Damage on Impact!
+#To minimise damage, reduce the explosion size and turn fire off
+MeteorShower:
+  #Should the weather type naturally start
+  Enabled: true
+  #List of worlds where this weather type is disabled in.
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should a meteor shower should run for in seconds.
+  Duration: 300
+  #Chance of a meteor shower starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.02
+  #Should it rain when it has finished
+  RainAfter: false
+  #The area around a player where a meteor will fall
+  RadiusAroundPlayer: 30
+  #Time between each possible meteor
+  TimeBetweenMeteor: 100
+  #Chance that a meteor will fall
+  ChanceOfMeteor: 0.5
+  #The size of the explosion from a meteor
+  ExplosionSize: 10
+  #Should the meteor explosion also be incendiary
+  Fire: true
+  
+#Configuration options for EarthQuake
+#WARNING! Earthquakes cause immense damage to your world, especially cracks
+#Enabling could potentially cause players to have their entire buildings collapse
+#Or completely destroyed!
+EarthQuake:
+  #Should the weather type naturally start
+  Enabled: false
+  #List of worlds where this weather type is disabled in.
+  DisabledWorlds:
+    - world_nether
+    - world_the_end
+  #How long by default should an earthquake should run for in seconds.
+  Duration: 300
+  #Chance of an earthquake starting naturally. Set to 0 to disable natural starts.
+  SpawnChance: 0.02
+  #Should it rain when it has finished
+  RainAfter: false
+  #Chance that blocks fall for each player every 0.25 seconds
+  FallChance: 0.5
+  #The area around a player where blocks will fall
+  RadiusAroundPlayer: 10
+  #How many block drops should occur around a player every 0.25 seconds
+  DropsPerPlayer: 2
+  #Chance that a block from below the player will fall
+  ChanceUnderneath: 0.5
+  #How deep could a block underneath a player can fall
+  BlockDepthUnderneath: 10
+  #Options for cracks caused by earthquakes
+  #Warning! Cracks cause immense damage to the world!
+  Crack:
+    #Should EarthQuakes cause cracks
+    Enabled: true
+    #How many seconds inbetween could a crack potential form
+    TimeBetweenCracks: 100
+    #Chance that a crack forms
+    CrackChance: 0.5
+    #Distance from a player where a crack can form
+    FromPlayer: 20
+    #Maximum width a crack can be
+    MaxWidth: 4
+    #Minimum width a crack can be
+    MinWidth: 2
+    #Maximum Distance from start of crack to end
+    MaxRadius: 40
+    #Minumum Distance from start of crack to end
+    MinRadius: 10
+    #Height where the crack starts
+    StartHeight: 1
+    #Height where underneath there will be lava
+    #If you do not want lava then set LavaHeight less than StartHeight
+    LavaHeight: 20
+    #Height where inbetween it and LavaHeight blocks will be destroyed
+    DestroyHeight: 55
+    #Number of blocks destroyed per tick underneath DestroyHeight
+    #Reduce this number if cracks cause lag, but it will mean cracks take longer to form.
+    BelowBlocksRemoved: 10
+    #Number of blocks that will fall per tick above DestroyHeight
+    #Reduce this number if cracks cause lag, but it will mean cracks take longer to form.
+    AboveBlocksRemoved: 10
   
 #Configuration options for when it is raining Cats and Dogs
 #Warning this is a joke weather type and shouldn't be set to naturally occur.
@@ -317,7 +463,7 @@ FlashFlood:
 CatsAndDogs:
   #Should the weather type naturally start
   Enabled: false
-   #List of worlds where this weather type is disabled in.
+  #List of worlds where this weather type is disabled in.
   DisabledWorlds:
     - world_nether
     - world_the_end

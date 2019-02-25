@@ -87,7 +87,7 @@ public class FlashFlood extends WorldWeather
 			floodLocation(loc);
 		} else {
 			loc.add(0,1,0);
-			if(WeatherHandler.locationIsProtected(loc)) {return;}
+			if(WeatherHandler.locationIsProtected(loc) || !WeatherHandler.checkValidWaterLocation(loc)) {return;}
 			floodLocation(loc);
 		}
 	}

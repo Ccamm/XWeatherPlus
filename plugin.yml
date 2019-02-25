@@ -1,9 +1,9 @@
 name: XWeatherPlus
 main: me.Ccamm.XWeatherPlus.Main
 author: Ccamm
-version: 2.0.0
+version: 1.0.0
 api-version: 1.13
-softdepend: [Multiverse-Core, WorldGuard, XWeather]
+softdepend: [Multiverse-Core, WorldGuard]
 commands:
   xweather:
     description: For setting the weather

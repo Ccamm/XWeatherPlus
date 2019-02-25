@@ -97,6 +97,7 @@ public class Commands implements CommandExecutor
 	{
 		sendMessage(line.replaceAll("<print_all_weathertypes>", language.getString("WeatherTypes.Tornado")), sender);
 		sendMessage(line.replaceAll("<print_all_weathertypes>", language.getString("WeatherTypes.FireTornado")), sender);
+		sendMessage(line.replaceAll("<print_all_weathertypes>", language.getString("WeatherTypes.Meteor")), sender);
 		for(WorldWeatherType w : WorldWeather.getWeathers()) {
 			sendMessage(line.replaceAll("<print_all_weathertypes>", w.getName()), sender);
 		}

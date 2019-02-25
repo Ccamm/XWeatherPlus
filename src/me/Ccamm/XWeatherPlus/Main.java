@@ -14,31 +14,26 @@ public class Main extends JavaPlugin
 	private static Updater update;
 	private static ConfigLoader configloader;
 	private static LanguageLoader languageloader;
+	private static boolean debugmode;
 	
 	@Override
 	public void onEnable()
 	{
-		Plugin freeversion = Bukkit.getPluginManager().getPlugin("XWeather");
-		if(freeversion != null) {
-			Bukkit.getServer().getLogger().info(pluginprefix + "Detected that XWeather is loaded. Disabling so only XWeatherPlus will run");
-			Bukkit.getServer().getLogger().info(pluginprefix + "To prevent this message from popping up each start up delete XWeather.jar");
-			Bukkit.getServer().getLogger().info(pluginprefix + "You can copy your old config settings for XWeather straight into the XWeatherPlus config.yml");
-			Bukkit.getServer().getLogger().info(pluginprefix + "The plugin will automatically update it with all of the new options");
-			Bukkit.getPluginManager().disablePlugin(freeversion);
-		}
-		
 		plugin = this;
 		configloader = new ConfigLoader();
 		FileConfiguration config = configloader.loadConfig();
+		debugmode = config.getBoolean("Debug");
 		languageloader = LanguageLoader.setupLoader();
 		WeatherHandler.setUpHandler(config);
 		this.getCommand("xweather").setExecutor(new Commands());
 		/*Add after first upload of the pro version to do update checks
+		 * Remember that there is a section in Events.java too
 		update = new Updater(this, 62733, config);
 		
 		update.checkForUpdates(null);*/
 		
 		Bukkit.getServer().getPluginManager().registerEvents(new Events(), this);
+		Bukkit.getServer().getLogger().info(pluginprefix + "Finished loading plugin.");
 	}
 	
 	@Override
@@ -66,4 +61,5 @@ public class Main extends JavaPlugin
 	public static String getPrefix() {return pluginprefix;}
 	public static Updater getUpdater() {return update;}
 	public static LanguageLoader getLanguageLoader() {return languageloader;}
+	public static boolean isDebug() {return debugmode;}
 }

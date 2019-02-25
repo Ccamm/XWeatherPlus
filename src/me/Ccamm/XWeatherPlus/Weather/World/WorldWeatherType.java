@@ -1,5 +1,6 @@
 package me.Ccamm.XWeatherPlus.Weather.World;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 import org.bukkit.World;
@@ -20,4 +21,5 @@ public interface WorldWeatherType
 	String getName();
 	String getConfigPrefix();
 	HashSet<World> getEnabledWorlds();
+	HashMap<World, Integer> getRunningWorlds();
 }

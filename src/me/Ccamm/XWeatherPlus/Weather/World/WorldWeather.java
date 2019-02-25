@@ -29,9 +29,13 @@ import me.Ccamm.XWeatherPlus.LanguageLoader;
 import me.Ccamm.XWeatherPlus.Main;
 import me.Ccamm.XWeatherPlus.Weather.WeatherHandler;
 import me.Ccamm.XWeatherPlus.Weather.Wind;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.AcidRain;
 import me.Ccamm.XWeatherPlus.Weather.World.Types.CatsAndDogs;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.EarthQuake;
 import me.Ccamm.XWeatherPlus.Weather.World.Types.FlashFlood;
 import me.Ccamm.XWeatherPlus.Weather.World.Types.HailStorm;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.HeavyRain;
+import me.Ccamm.XWeatherPlus.Weather.World.Types.MeteorShower;
 import me.Ccamm.XWeatherPlus.Weather.World.Types.SandStorm;
 import me.Ccamm.XWeatherPlus.Weather.World.Types.ShootingStars;
 import me.Ccamm.XWeatherPlus.Weather.World.Types.SnowStorm;
@@ -72,9 +76,9 @@ public class WorldWeather implements WorldWeatherType
 		this.duration = config.getInt(configprefix + ".Duration")*20;
 		this.spawnchance = config.getDouble(configprefix + ".SpawnChance");
 		this.rainafter = config.getBoolean(configprefix + ".RainAfter");
+		reloadName();
 		setEnabledWorlds(config.getStringList(configprefix + ".DisabledWorlds"));
 		loadWindOptions(config);
-		reloadName();
 		loadMoreOptions(config);
 	}
 	
@@ -85,15 +89,20 @@ public class WorldWeather implements WorldWeatherType
 		for(String s : disablestrings)
 		{
 			if(Bukkit.getWorld(s) == null) {
-				LanguageLoader.sendMessage("ChatMessages.notworld", s, null, true);
 				continue;
 			} else {
 				remove.add(Bukkit.getWorld(s));
 			}
 		}
 		
+		if(Main.isDebug()) {
+			LanguageLoader.sendMessage("ChatMessages.weatherload", name, null, true);
+		}
 		for(World uw : universalworlds) {
 			if(uw.getEnvironment().equals(Environment.NORMAL) && !remove.contains(uw)) {
+				if(Main.isDebug()) {
+					LanguageLoader.sendMessage("ChatMessages.worldload", uw.getName(), null, true);
+				}
 				enabledworlds.add(uw);
 			}
 		}
@@ -110,6 +119,10 @@ public class WorldWeather implements WorldWeatherType
 		ShootingStars.setUpShootingStars(config);
 		FlashFlood.setUpFlashFlood(config);
 		CatsAndDogs.setUpCatsAndDogs(config);
+		AcidRain.setUpAcidRain(config);
+		HeavyRain.setUpHeavyRain(config);
+		MeteorShower.setUpMeteorShower(config);
+		EarthQuake.setUpEarthQuake(config);
 	}
 	
 	protected void reloadName()
@@ -419,6 +432,8 @@ public class WorldWeather implements WorldWeatherType
 			WeatherHandler.setSunny(world, duration);
 		}
 	}
+	
+	public HashMap<World, Integer> getRunningWorlds() {return runningworlds;}
 	
 	//Methods that can be overriden by other weathertypes
 	protected void startWeather(World world, int dur) {}

@@ -11,6 +11,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.Ccamm.XWeatherPlus.Main;
+import me.Ccamm.XWeatherPlus.Weather.Point.Types.Meteor;
 import me.Ccamm.XWeatherPlus.Weather.Point.Types.Tornado;
 
 public class PointWeather implements PointWeatherType
@@ -62,6 +63,8 @@ public class PointWeather implements PointWeatherType
 	{
 		if(args[0].equalsIgnoreCase(Main.getLanguageLoader().getLanguage().getString("ChatCommands.set"))) {
 			if(Tornado.onCommandSet(sender, args)) {
+				return true;
+			} else if(Meteor.onCommandSet(sender, args)) {
 				return true;
 			}
 		} else if(args[0].equalsIgnoreCase(Main.getLanguageLoader().getLanguage().getString("ChatCommands.stop"))) {

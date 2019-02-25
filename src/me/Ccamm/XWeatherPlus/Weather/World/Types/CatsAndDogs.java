@@ -28,7 +28,7 @@ public class CatsAndDogs extends WorldWeather
 	private static double chanceofcat;
 	private static int particlecount;
 	
-	public CatsAndDogs(FileConfiguration config) {
+	private CatsAndDogs(FileConfiguration config) {
 		super("CatsAndDogs", config, 10);
 		WorldWeather.addWeatherType(this);
 	}
@@ -134,8 +134,8 @@ public class CatsAndDogs extends WorldWeather
 			dz = 1.5*r.nextDouble()*(r.nextBoolean() ? 1:-1);
 			loc.add(dx, 0, dz);
 			if(WeatherHandler.isLocationLoaded(loc)
-					|| WeatherHandler.isDryBiome(p.getLocation())
-					|| WeatherHandler.locationIsProtected(loc)) {
+					&& !WeatherHandler.isDryBiome(p.getLocation())
+					&& !WeatherHandler.locationIsProtected(loc)) {
 				if(r.nextDouble() <= chanceofcat) {
 					loc.setY(p.getLocation().getY() + 90);
 					loc.subtract(0, (r.nextBoolean() ? 1:-1)*heightdif*r.nextDouble(), 0);

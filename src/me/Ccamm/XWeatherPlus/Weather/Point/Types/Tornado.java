@@ -189,15 +189,21 @@ public class Tornado extends PointWeather
 		for(String s : disablestrings)
 		{
 			if(Bukkit.getWorld(s) == null) {
-				LanguageLoader.sendMessage("ChatMessages.notworld", s, null, true);
 				continue;
 			} else {
 				remove.add(Bukkit.getWorld(s));
 			}
 		}
 		
+		if(Main.isDebug()) {
+			LanguageLoader.sendMessage("ChatMessages.weatherload", name, null, true);
+		}
+		
 		for(World uw : universalworlds) {
 			if(uw.getEnvironment().equals(Environment.NORMAL) && !remove.contains(uw)) {
+				if(Main.isDebug()) {
+					LanguageLoader.sendMessage("ChatMessages.worldload", uw.getName(), null, true);
+				}
 				enabledworlds.add(uw);
 			}
 		}
