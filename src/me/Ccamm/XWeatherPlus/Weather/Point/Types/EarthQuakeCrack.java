@@ -55,6 +55,11 @@ public class EarthQuakeCrack
 		startDestruction();
 	}
 	
+	public void setCancelled()
+	{
+		cancelled = true;
+	}
+	
 	private double[] getOrigin()
 	{
 		double[] result = {start1.getX(), start1.getY(), start1.getZ()};

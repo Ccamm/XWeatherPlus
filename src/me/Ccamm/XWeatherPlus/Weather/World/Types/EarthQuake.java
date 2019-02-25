@@ -1,5 +1,6 @@
 package me.Ccamm.XWeatherPlus.Weather.World.Types;
 
+import java.util.HashMap;
 import java.util.Random;
 
 import org.bukkit.Location;
@@ -17,6 +18,7 @@ import me.Ccamm.XWeatherPlus.Weather.World.WorldWeather;
 public class EarthQuake extends WorldWeather
 {
 	private static EarthQuake earthquake = null;
+	private static HashMap<EarthQuakeCrack, World> cracks = new HashMap<EarthQuakeCrack, World>();
 	
 	private static int blockfallradius;
 	private static int dropsperplayer;
@@ -107,8 +109,24 @@ public class EarthQuake extends WorldWeather
 			loc.setZ(loc.getZ() + dz);
 			if(!WeatherHandler.locationIsProtected(loc)
 					&& WeatherHandler.isLocationLoaded(loc)) {
-				new EarthQuakeCrack(loc);
+				cracks.put(new EarthQuakeCrack(loc), world);
 			}
+		}
+	}
+	
+	@Override
+	protected void endWeather(World world) 
+	{
+		for(EarthQuakeCrack crack : cracks.keySet()) {
+			if(cracks.get(crack).equals(world)) {
+				crack.setCancelled();
+			}
+		}
+		
+		if(rainafter) {
+			WeatherHandler.setRain(world, duration);
+		} else {
+			WeatherHandler.setSunny(world, duration);
 		}
 	}
 	
@@ -129,7 +147,7 @@ public class EarthQuake extends WorldWeather
 					loc = b.getLocation();
 					loc.getWorld().spawnFallingBlock(loc, b.getBlockData());
 					loc.getBlock().setType(Material.AIR);
-					loc.getWorld().playSound(loc, Sound.ENTITY_MINECART_RIDING, (float) 0.2, (float) 0.5);
+					loc.getWorld().playSound(loc, Sound.BLOCK_GRASS_BREAK, (float) 0.2, (float) 0.5);
 				}
 			}
 		}
